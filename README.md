@@ -69,5 +69,14 @@ And then install OpenCV with
 
 ```pip install opencv-python```
 
-which is used in the video comparison scripts.
+and a Python ffmpeg wrapper with
 
+```pip install ffmpeg-python```
+
+which are used in the video comparison scripts.
+
+---
+
+Before you can compare videos with the [compare_video_player](./compare_video_player.py) script, you need to download some sample videos, copy them into the [data](./data/) folder and adjust the file names in the script. The idea is to compare videos with the same content but different codecs used for compression. You will find download sources in the data folder. The raw videos are not part of this repository as they are too big.
+
+You can use the [compress_video](./compress_video.py) script in order to compress a video file, but it is recommended to use the command line version of [FFmpeg](https://ffmpeg.org/download.html) which has to be installed before anyway.
