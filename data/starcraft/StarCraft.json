@@ -1,0 +1,41 @@
+{
+    "Contact": {
+        "Company": "Interdigital",
+        "Name": "Ga\u00c3\u00ablle Martin-Cocher",
+        "e-mail": " Gaelle.Martin-Cocher@InterDigital.com",
+        "generation": "The StarCraft sequence provided by Derf-Twitch can be downloaded in y4m format at following URL: https://media.xiph.org/video/derf/twitch/y4m/ AI49."
+    },
+    "Properties": {
+        "bitDepth": 8,
+        "colourPrimaries": "1",
+        "duration": 10.0,
+        "format": "yuv",
+        "frameCount": 600,
+        "frameRate": 60.0,
+        "height": 1080,
+        "matrixCoefficients": "1",
+        "packing": "planar",
+        "sampleAspectRatio": "1",
+        "scan": "progressive",
+        "subsampling": "420",
+        "transferCharacteristics": "1",
+        "width": 1920,
+        "startFrame": 1,
+        "videoFullRangeFlag": "0",
+        "chromaSampleLocType": "0"
+    },
+    "Sequence": {
+        "Background": "The StarCraft test sequence from Twitch is an extract from a famous Real Time Strategy game developed and published by Blizzard Entertainment where players enter a tournament of 5 games and chose to play one of three alien categories with distinct characteristic and abilities. ",
+        "Key": "S5-R13",
+        "Name": "StarCraft",
+        "Scenario": "Gaming",
+        "TR26.955": "Annex C.2.14",
+        "URI": "https://dash-large-files.akamaized.net/WAVE/3GPP/5GVideo/ReferenceSequences/StarCraft/StarCraft.yuv",
+        "md5": "6fcbd4090efdd04b78b4898c2e7eb90f",
+        "preview": "https://dash-large-files.akamaized.net/WAVE/3GPP/5GVideo/ReferenceSequences/StarCraft/StarCraft.mp4",
+        "thumbnail": "https://dash-large-files.akamaized.net/WAVE/3GPP/5GVideo/ReferenceSequences/StarCraft/StarCraft.png",
+        "size": 1866240000,
+        "md5-10": "64de921023adc3fbb86bea94b2e157e8"
+    },
+    "copyRight": "The copyright under which the StarCraft video sequence provided by DERF-Twitch is made available can be found on that link: https://media.xiph.org/video/derf/twitch/copyright.txt."
+}
