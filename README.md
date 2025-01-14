@@ -75,6 +75,10 @@ and a Python ffmpeg wrapper with
 
 which are used in the video comparison scripts.
 
+For the Lagrange demo you will need to install [matplotlib](https://matplotlib.org/stable/users/getting_started/) with
+
+```pip install matplotlib```
+
 ---
 
 Before you can compare videos with the [compare_video_player](./compare_video_player.py) script, you need to download some sample videos, copy them into the [data](./data/) folder and adjust the file names in the script. The idea is to compare videos with the same content but different codecs used for compression. You will find download sources in the data folder. The raw videos are not part of this repository as they are too big.
