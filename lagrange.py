@@ -21,15 +21,15 @@ def lagrange_polynomial(j, x, x_i):
 # test data
 data = [2,4,3,1]
 support = [0,1,2,3]
-test_support = np.array([4, 5])
+test_support = np.array([4,5])
 
-data = [2,1,0,2]
-support = [0,3,4,5]
-test_support = np.array([1,2])
+# define plot range
+n = 256
+min = min(min(support),min(test_support)) - 0.2
+max = max(max(support),max(test_support)) + 0.2
+x = np.linspace(min,max,n,endpoint=True)
 
 # compute Lagrange polynomial
-n = 256
-x = np.linspace(-0.2,5.2,n,endpoint=True)
 y = lagrange(x, support, data)
 #l_0 = lagrange_polynomial(0, x, support)
 #l_1 = lagrange_polynomial(1, x, support)
@@ -52,10 +52,12 @@ ax.axvline(0, color='black',linewidth=0.5)
 # plot data points
 ax.scatter(support, data, color='orange', zorder=5)
 
-# compute and plot data points for x=4 and x=5
+# compute and plot data points for test_support
 xx = test_support
 yy = lagrange(xx, support, data)
 ax.scatter(xx, yy, color='red', zorder=5)
 
+# show plot
 plt.show()
+# save plot
 fig.savefig('foo.png', bbox_inches='tight')
