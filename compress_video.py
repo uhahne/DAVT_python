@@ -1,22 +1,21 @@
 import sys
 import ffmpeg
 
-def compress_video(input_file, output_file, vcodec='h264'):
+def compress_video(input_file, output_file, vcodec='h264', crf=23):
     """
     Compress a video file using ffmpeg with specified parameters.
 
     :param input_file: Path to the input video file
     :param output_file: Path to the output compressed video file
-    :param codec: Codec to use for compression (default is h264)
+    :param vcodec: Codec to use for compression (default is h264)
     :param crf: Constant Rate Factor (lower value means better quality, but larger file size)
-    :param preset: Preset for compression speed (slower presets give better compression)
     """
     try:
-        output_file_with_params = f"{output_file.rsplit('.', 1)[0]}__vcodec{vcodec}.{output_file.rsplit('.', 1)[1]}"
+        output_file_with_params = f"{output_file.rsplit('.', 1)[0]}_v-{vcodec}_crf{crf}.{output_file.rsplit('.', 1)[1]}"
         (
             ffmpeg
             .input(input_file)
-            .output(output_file_with_params, vcodec=vcodec )
+            .output(output_file_with_params, vcodec=vcodec, crf=crf)
             .run(overwrite_output=True)
         )
         print(f"Video compressed successfully: {output_file_with_params}")
@@ -40,7 +39,7 @@ def get_codec(video_path):
     return video_stream['codec_name']
     
 if __name__ == "__main__":
-    input_video = 'data/tbd'  # Replace with your input video file path
+    input_video = 'data/starcraft/StarCraft.mp4'  # Replace with your input video file path
     output_video = 'data/output.mp4'  # Replace with your desired output video file path
     if (get_codec(input_video) != None):
         compress_video(input_video, output_video)
