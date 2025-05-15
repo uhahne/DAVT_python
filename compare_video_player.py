@@ -6,8 +6,8 @@ import ffmpeg
 
 
 # Paths to the video files
-video_path_1 = 'data/starcraft/StarCraft.yuv'
-video_path_2 = 'data/starcraft/output.mp4'
+video_path_1 = 'data/<video_file_1>'
+video_path_2 = 'data/<video_file_2>'
 
 # Function to compute the mean squared difference between two frames
 def mean_squared_difference_per_pixel(frame1, frame2):
