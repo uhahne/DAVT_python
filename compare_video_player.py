@@ -6,8 +6,8 @@ import ffmpeg
 
 
 # Paths to the video files
-video_path_1 = 'data/<video_file_1>'
-video_path_2 = 'data/<video_file_2>'
+video_path_1 = 'TODO'
+video_path_2 = 'TODO'
 
 # Function to compute the mean squared difference between two frames
 def mean_squared_difference_per_pixel(frame1, frame2):
@@ -46,7 +46,7 @@ def get_codec(video_path):
 
     print(f"Codec: {video_stream['codec_name']}")
 
-def getFileInformation(video_path):
+def get_file_information(video_path):
     # Print file sizes of the video files in MB
     file_size = Path(video_path).stat().st_size / (1024 * 1024)
     print(f"File size: {file_size:.2f} MB")
@@ -56,24 +56,25 @@ def getFileInformation(video_path):
 cap1 = cv2.VideoCapture(video_path_1)
 cap2 = cv2.VideoCapture(video_path_2)
 
+separator = '-------\n'
 print("Comparing video files:")
 print(f"Video 1: {video_path_1}")
 get_codec(video_path_1)
-file_size_1 = getFileInformation(video_path_1)
+file_size_1 = get_file_information(video_path_1)
 data_rate_1 = cap1.get(cv2.CAP_PROP_BITRATE) / 1000
 print(f"Data rate of video 1: {data_rate_1:.2f} kbps")
-print('-------\n')
+print(separator)
 
 print(f"Video 2: {video_path_2}")
 get_codec(video_path_2)
-file_size_2 = getFileInformation(video_path_2)
+file_size_2 = get_file_information(video_path_2)
 data_rate_2 = cap2.get(cv2.CAP_PROP_BITRATE) / 1000
 print(f"Data rate of video 2: {data_rate_2:.2f} kbps")
-print('-------\n')
+print(separator)
 
 print(f"Ratio of file size 1 to file size 2: {file_size_1 / file_size_2:.2f}")
 print(f"Ratio of data rate 1 to data rate 2: {data_rate_1 / data_rate_2:.2f}")
-print('-------\n')
+print(separator)
 
 frame_count = 0
 total_msd = 0
