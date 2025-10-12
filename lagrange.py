@@ -19,9 +19,9 @@ def lagrange_polynomial(j, x, x_i):
     return p
 
 # test data
-data = [2,4,3,1]
-support = [0,1,2,3]
-test_support = np.array([4,5])
+data = [0,1,21]
+support = [0,1,3]
+test_support = np.array([2])
 
 # define plot range
 n = 256
@@ -31,9 +31,9 @@ x = np.linspace(min,max,n,endpoint=True)
 
 # compute Lagrange polynomial
 y = lagrange(x, support, data)
-#l_0 = lagrange_polynomial(0, x, support)
-#l_1 = lagrange_polynomial(1, x, support)
-#l_2 = lagrange_polynomial(2, x, support)
+l_0 = lagrange_polynomial(0, x, support)
+l_1 = lagrange_polynomial(1, x, support)
+l_2 = lagrange_polynomial(2, x, support)
 #l_3 = lagrange_polynomial(3, x, support)
 
 # setup plot with axes
@@ -44,9 +44,9 @@ ax.axhline(0, color='black',linewidth=0.5)
 ax.axvline(0, color='black',linewidth=0.5)
 
 # plot Lagrange polynomials
-#ax.plot (x, l_0, color='yellow', alpha=1.00)
-#ax.plot (x, l_1, color='orange', alpha=1.00)
-#ax.plot (x, l_2, color='green', alpha=1.00)
+ax.plot (x, l_0, color='yellow', alpha=1.00)
+ax.plot (x, l_1, color='orange', alpha=1.00)
+ax.plot (x, l_2, color='green', alpha=1.00)
 #ax.plot (x, l_3, color='darkgreen', alpha=1.00)
 
 # plot data points
@@ -56,6 +56,7 @@ ax.scatter(support, data, color='orange', zorder=5)
 xx = test_support
 yy = lagrange(xx, support, data)
 ax.scatter(xx, yy, color='red', zorder=5)
+print(xx,yy)
 
 # show plot
 plt.show()

@@ -1,5 +1,5 @@
 class LZ77Compressor:
-    def __init__(self, window_size=20):
+    def __init__(self, window_size=10):
         self.window_size = window_size
 
     def compress(self, data):
@@ -59,7 +59,7 @@ class LZ77Compressor:
 
 if __name__ == "__main__":
     compressor = LZ77Compressor()
-    data = "TOBEORNOTTOBEZ"
+    data = "ABRAKADABRAZ"
     compressed = compressor.compress(data)
     decompressed = compressor.decompress(compressed)
 

@@ -1,0 +1,5 @@
+2340 x 1080 Pixel (iPhone 12 mini)
+
+AV1 mit libaom-av1 ist sehr langsam, libsvtav1 geht viel schneller
+
+Wie bekommt man das YUV Rohvideo in einen Container? Schritt einbauen und konkret erklären.

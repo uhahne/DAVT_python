@@ -160,8 +160,8 @@ cython_debug/
 #.idea/
 data/starcraft/StarCraft.yuv
 data/tabletennis/itur525_29tabletennis_original.avi
-output.mp4
 shakespeare.txt
-data/tabletennis/output__vcodeclibx265.mp4
-data/tabletennis/output_crf100_fast.mp4
-data/tabletennis/tabletennis_h265.mp4
+*.mp4
+*.avi
+data/zdf/*.*
+input.txt
