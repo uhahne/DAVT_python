@@ -41,20 +41,26 @@ data = "10001011" # Original data
 key = "101011" # Prüfpolynom
 
 
-print("Original data: ", data)
-print("Key: ", key)
+print("Checking data without error:")
+print("\tOriginal data: ", data)
+print("\tKey: ", key)
 remainder = crc_remainder(data, key, '0')
-print("Remainder: ", remainder)
+print("\tRemainder: ", remainder)
 
 if crc_check(data, key, remainder):
-    print("No error detected in the received data.")
+    print("\tNo error detected in the received data.")
 else:
-    print("Error detected in the received data.")
+    print("\tError detected in the received data.")
 
+
+print("Checking data with error:")
 # change encoded data to simulate error
 wrong_data = add_one_bit_error(data)
+print("\tCorrupted data: ", wrong_data)
+print("\tKey: ", key)
+print("\tRemainder: ", remainder)
 
 if crc_check(wrong_data, key, remainder):
-    print("No error detected in the received data.")
+    print("\tNo error detected in the received data.")
 else:
-    print("Error detected in the received data.")
+    print("\tError detected in the received data.")

@@ -44,7 +44,9 @@ class LZ78:
 
 # Example usage:
 lz78 = LZ78()
-compressed = lz78.compress("ABABABA")
+original_data = "AABABBABBAABA"
+print("Original Data:", original_data)
+compressed = lz78.compress(original_data)
 print("Compressed:", compressed)
 print("Dictionary:", lz78.dictionary)
 decompressed = lz78.decompress(compressed)
