@@ -93,7 +93,9 @@ def build_huffman_tree(frequencies):
 
     return heap[0]
 
-def generate_huffman_codes(node, prefix="", codebook={}):
+def generate_huffman_codes(node, prefix="", codebook=None):
+    if codebook is None:
+        codebook = {}
     if node is not None:
         if node.char is not None:
             codebook[node.char] = prefix
@@ -104,33 +106,6 @@ def generate_huffman_codes(node, prefix="", codebook={}):
 def load_text_file(file_path):
     with open(file_path, 'r') as file:
         return file.read()
-
-def make_canonical_huffman_tree(huffman_tree):
-    # create a list of lists to store the nodes at each level of the tree
-    levels = []
-    # create a list to store the nodes at the current level
-    current_level = [huffman_tree]
-    # iterate through the tree level by level
-    while current_level:
-        # add the current level to the levels list
-        levels.append(current_level)
-        # create a list to store the nodes at the next level
-        next_level = []
-        # iterate through the nodes at the current level
-        for node in current_level:
-            # add the left and right children of the current node to the next level
-            if node.left:
-                next_level.append(node.left)
-            if node.right:
-                next_level.append(node.right)
-        # set the current level to the next level
-        current_level = next_level
-    # sort the nodes at each level by their frequency
-    for level in levels:
-        level.sort(key=lambda node: node.freq)
-    # create a dictionary to store the canonical codes
-    canonical_codes = {}
-    # iterate through the levels in reverse order
     
 
 def encode(message, huffman_dict):

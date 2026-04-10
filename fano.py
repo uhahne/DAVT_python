@@ -107,7 +107,9 @@ def split_frequencies(frequencies):
     return total_frequency,left_symbols,right_symbols
 
 
-def generate_codes(node, prefix="", codebook={}):
+def generate_codes(node, prefix="", codebook=None):
+    if codebook is None:
+        codebook = {}
     if node is not None:
         if node.char is not None:
             codebook[node.char] = prefix
@@ -115,7 +117,9 @@ def generate_codes(node, prefix="", codebook={}):
         generate_codes(node.right, prefix + "1", codebook)
     return codebook
 
-def get_codes(node, codes={}):
+def get_codes(node, codes=None):
+    if codes is None:
+        codes = {}
     if node is not None:
         if node.symbol is not None:
             codes[node.symbol] = node.code
